@@ -1,0 +1,14 @@
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\Tools\chromedriver.exe
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\ClinicalTrials.dll.config
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\ClinicalTrials.dll
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\ClinicalTrials.pdb
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\TechTalk.SpecFlow.dll
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\WebDriver.dll
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\WebDriver.Support.dll
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\Newtonsoft.Json.xml
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\WebDriver.xml
+C:\Repos\ClinicalTrials\ClinicalTrials\bin\Debug\WebDriver.Support.xml
+C:\Repos\ClinicalTrials\ClinicalTrials\obj\Debug\ClinicalTrials.dll
+C:\Repos\ClinicalTrials\ClinicalTrials\obj\Debug\ClinicalTrials.pdb
+C:\Repos\ClinicalTrials\ClinicalTrials\obj\Debug\ClinicalTrials.csprojResolveAssemblyReference.cache
