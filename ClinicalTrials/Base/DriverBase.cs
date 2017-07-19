@@ -11,31 +11,32 @@ using TechTalk.SpecFlow;
 namespace ClinicalTrials.Base
 {
     [Binding]
-    class DriverBase
+    public class DriverBase
     {
-        private static IWebDriver _driver;
+        protected static IWebDriver Driver;
 
         [BeforeScenario]
         public void BeforeScenario()
         {
-            _driver = GetDefaultDriver();
-            ScenarioContext.Current["driver"] = _driver;
-
-            _driver.Navigate().GoToUrl("http://uat-clinicaltrials.cancerinstitute.org.au/");
+            if (Driver == null)
+            {
+                GetDefaultDriver();
+            }
         }
 
-        private static IWebDriver GetDefaultDriver()
+        private static void GetDefaultDriver()
         {
-            _driver = new ChromeDriver(Path.Combine(Environment.CurrentDirectory, @"Tools\"));
+            Driver = new ChromeDriver(Path.Combine(Environment.CurrentDirectory, @"Tools\"));
             new ChromeOptions().AddArguments("no-sandbox");
-            _driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
-            return _driver;
+            Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
         }
+
+
 
         [AfterScenario]
         public void AfterScenario()
         {
-            _driver.Quit();
+            Driver.Quit();
         }
     }
 }

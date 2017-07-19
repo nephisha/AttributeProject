@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClinicalTrials.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 
 namespace ClinicalTrials.Pages
 {
-    class HomePage
+    public class HomePage : PageBase
     {
-        public IWebDriver Driver { get; private set; }
-
-        public HomePage(IWebDriver driver)
-        {
-            Driver = driver;
-            PageFactory.InitElements(driver, this);
-        }
-
         [FindsBy(How = How.Id, Using = "legend-sites")]
         private IWebElement Hospital { get; set; }
 
@@ -26,6 +19,10 @@ namespace ClinicalTrials.Pages
         {
             var select = new SelectElement(Hospital);
             select.SelectByText(hospital);
+        }
+
+        public HomePage(IWebDriver driver) : base(driver)
+        {
         }
     }
 }

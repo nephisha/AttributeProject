@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClinicalTrials.Base
 {
-    class TestBase
+    public class TestBase : DriverBase
     {
     }
 }

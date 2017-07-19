@@ -1,4 +1,5 @@
 ﻿using System;
+using ClinicalTrials.Base;
 using ClinicalTrials.Pages;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
@@ -6,21 +7,16 @@ using TechTalk.SpecFlow;
 namespace ClinicalTrials.Steps
 {
     [Binding]
-    public class SubmitAClinicalTrialForThePatientSteps
+    public class SubmitAClinicalTrialForThePatientSteps : TestBase
     {
-        private readonly LoginPage _loginPage;
-        private readonly HomePage _homePage;
 
-        public SubmitAClinicalTrialForThePatientSteps()
-        {
-            var driver = (IWebDriver)ScenarioContext.Current["driver"];
-            _loginPage = new LoginPage(driver);
-            _homePage = new HomePage(driver);
-        }
+        private readonly LoginPage _loginPage = new LoginPage(Driver);
+        private readonly HomePage _homePage = new HomePage(Driver);
 
         [Given(@"that I login to Clinical Trial Application with (.*) and (.*)")]
         public void GivenThatILoginToClinicalTrialApplication(string user, string pwd)
         {
+            _loginPage.LaunchTheApplication();
             _loginPage.LoginToApplication(user, pwd);
         }
 
