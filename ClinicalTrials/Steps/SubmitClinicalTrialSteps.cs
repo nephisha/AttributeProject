@@ -24,8 +24,8 @@ namespace ClinicalTrials.Steps
             _loginPage.LoginToApplication(user, pwd);
         }
 
-        [Given(@"she selects the (.*)")]
-        public void GivenSheSelectsTheHospital(string hospital)
+        [Given(@"selects (.*) in Dashboard")]
+        public void GivenSelectsHospitalInDashboard(string hospital)
         {
             _homePage.SelectAHospital(hospital);
         }

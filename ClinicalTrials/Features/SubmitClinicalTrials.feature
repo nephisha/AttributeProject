@@ -8,7 +8,7 @@
   Scenario Outline: Susan needs to submit a clinical trial 
 
     Given that I login to Clinical Trial Application with <UserName> and <Password>
-	And she selects the <Hospital>
+	And selects <Hospital> in Dashboard
 	And she fills up the Trial details 
 	And she fills up the BioMarker section
 	And she fills up the Trial Type
