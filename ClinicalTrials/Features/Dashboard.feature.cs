@@ -18,20 +18,19 @@ namespace ClinicalTrials.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class SubmitAClinicalTrialForThePatientFeature
+    public partial class DashboardFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SubmitClinicalTrials.feature"
+#line 1 "Dashboard.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Submit a Clinical Trial for the Patient", "  In order to serve the patient medically\r\n  As a Doctor\r\n  I want to be able to " +
-                    "submit a clinical trial for the patient", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Dashboard", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -46,9 +45,9 @@ namespace ClinicalTrials.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Submit a Clinical Trial for the Patient")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Dashboard")))
             {
-                global::ClinicalTrials.Features.SubmitAClinicalTrialForThePatientFeature.FeatureSetup(null);
+                global::ClinicalTrials.Features.DashboardFeature.FeatureSetup(null);
             }
         }
         
@@ -68,7 +67,7 @@ namespace ClinicalTrials.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SusanNeedsToSubmitAClinicalTrial(string userName, string password, string hospital, string[] exampleTags)
+        public virtual void SusanNeedsToViewTheDashboard(string user, string password, string hospital, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Clinical"};
@@ -76,41 +75,31 @@ namespace ClinicalTrials.Features
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Susan needs to submit a clinical trial", @__tags);
-#line 8
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Susan needs to view the dashboard", @__tags);
+#line 4
   this.ScenarioSetup(scenarioInfo);
-#line 10
-    testRunner.Given(string.Format("that I login to Clinical Trial Application with {0} and {1}", userName, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 11
- testRunner.And("she fills up the Trial details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.And("she fills up the BioMarker section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("she fills up the Trial Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.And("she fills up the Portfolio Inclusion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.And("she fills up the Reporting Group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
-    testRunner.When("she submits the trial", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
-    testRunner.Then("she should be shown with success message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 6
+  testRunner.Given(string.Format("that I login to Clinical Trial Application with {0} and {1}", user, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+  testRunner.And(string.Format("I select the {0}", hospital), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+  testRunner.Then("I should see the dashboard of the selected hospital", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Susan needs to submit a clinical trial: Emmanuel Russel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Submit a Clinical Trial for the Patient")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Susan needs to view the dashboard: Emmanuel Russel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Dashboard")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Clinical")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Emmanuel Russel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:UserName", "Emmanuel Russel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Password", "Welcome@123")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Hospital", "Canberra Hospital")]
-        public virtual void SusanNeedsToSubmitAClinicalTrial_EmmanuelRussel()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "Emmanuel Russel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "Welcome@123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:hospital", "Canberra Hospital")]
+        public virtual void SusanNeedsToViewTheDashboard_EmmanuelRussel()
         {
-#line 8
-  this.SusanNeedsToSubmitAClinicalTrial("Emmanuel Russel", "Welcome@123", "Canberra Hospital", ((string[])(null)));
+#line 4
+  this.SusanNeedsToViewTheDashboard("Emmanuel Russel", "Welcome@123", "Canberra Hospital", ((string[])(null)));
 #line hidden
         }
     }

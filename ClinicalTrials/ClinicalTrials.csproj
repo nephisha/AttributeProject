@@ -40,6 +40,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="TechTalk.SpecFlow, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.2.2.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
@@ -70,6 +71,11 @@
     <Compile Include="Base\DriverBase.cs" />
     <Compile Include="Base\PageBase.cs" />
     <Compile Include="Base\TestBase.cs" />
+    <Compile Include="Features\Dashboard.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\SubmitClinicalTrials.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,11 +83,17 @@
     </Compile>
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\MenuPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\DashboardSteps.cs" />
     <Compile Include="Steps\SubmitClinicalTrialSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Dashboard.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Dashboard.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\SubmitClinicalTrials.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SubmitClinicalTrials.feature.cs</LastGenOutput>

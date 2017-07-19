@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using ClinicalTrials.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -11,6 +12,10 @@ namespace ClinicalTrials.Pages
 {
     public class LoginPage : PageBase
     {
+        public LoginPage(IWebDriver driver): base(driver)
+        {
+        }
+
         [FindsBy(How = How.Id, Using = "UserName")]
         private IWebElement UserName { get; set; }
 
@@ -22,7 +27,7 @@ namespace ClinicalTrials.Pages
 
         public void LaunchTheApplication()
         {
-            Driver.Navigate().GoToUrl("http://uat-clinicaltrials.cancerinstitute.org.au/");
+            Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["URL"]);
         }
 
         public void LoginToApplication(string user, string pwd)
@@ -30,10 +35,6 @@ namespace ClinicalTrials.Pages
             UserName.SendKeys(user);
             Password.SendKeys(pwd);
             Submit.Click();
-        }
-
-        public LoginPage(IWebDriver driver) : base(driver)
-        {
         }
     }
 }

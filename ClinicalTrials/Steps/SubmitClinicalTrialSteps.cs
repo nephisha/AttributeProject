@@ -9,27 +9,21 @@ namespace ClinicalTrials.Steps
     [Binding]
     public class SubmitAClinicalTrialForThePatientSteps : TestBase
     {
-
         private readonly LoginPage _loginPage = new LoginPage(Driver);
-        private readonly HomePage _homePage = new HomePage(Driver);
-
+        private readonly MenuPage _menuPage = new MenuPage(Driver);
+        
         [Given(@"that I login to Clinical Trial Application with (.*) and (.*)")]
         public void GivenThatILoginToClinicalTrialApplication(string user, string pwd)
         {
             _loginPage.LaunchTheApplication();
             _loginPage.LoginToApplication(user, pwd);
         }
-
-        [Given(@"selects (.*) in Dashboard")]
-        public void GivenSelectsHospitalInDashboard(string hospital)
-        {
-            _homePage.SelectAHospital(hospital);
-        }
         
         [Given(@"she fills up the Trial details")]
         public void GivenSheFillsUpTheTrialDetails()
         {
-            
+            _menuPage.ClickOnToggleMenu();
+            _menuPage.SelectSubmitATrialFromToggleMenu();
         }
         
         [Given(@"she fills up the BioMarker section")]
