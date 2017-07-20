@@ -4,39 +4,24 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 
 namespace ClinicalTrials.Base
 {
-    [Binding]
     public class DriverBase
     {
-        protected static IWebDriver Driver;
+        public static IWebDriver Driver { get; set; }
 
-        [BeforeScenario]
-        public void BeforeScenario()
-        {
-            if (Driver == null)
-            {
-                GetDefaultDriver();
-            }
-        }
-
-        private static void GetDefaultDriver()
+        public static IWebDriver GetDefaultDriver()
         {
             Driver = new ChromeDriver(Path.Combine(Environment.CurrentDirectory, @"Tools\"));
             new ChromeOptions().AddArguments("no-sandbox");
-            Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
-        }
-
-
-
-        [AfterScenario]
-        public void AfterScenario()
-        {
-            Driver.Quit();
+            //Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            return Driver;
         }
     }
 }

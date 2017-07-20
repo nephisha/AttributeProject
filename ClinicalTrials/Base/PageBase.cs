@@ -8,14 +8,11 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace ClinicalTrials.Base
 {
-    public class PageBase
+    public class PageBase : DriverBase
     {
-        public IWebDriver Driver { get; set; }
-
-        public PageBase(IWebDriver driver)
+        public PageBase()
         {
-            Driver = driver;
-            PageFactory.InitElements(driver, this);
+            PageFactory.InitElements(Driver, this);
         }
     }
 }

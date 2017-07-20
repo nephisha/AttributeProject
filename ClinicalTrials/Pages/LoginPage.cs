@@ -12,10 +12,6 @@ namespace ClinicalTrials.Pages
 {
     public class LoginPage : PageBase
     {
-        public LoginPage(IWebDriver driver): base(driver)
-        {
-        }
-
         [FindsBy(How = How.Id, Using = "UserName")]
         private IWebElement UserName { get; set; }
 
@@ -36,5 +32,7 @@ namespace ClinicalTrials.Pages
             Password.SendKeys(pwd);
             Submit.Click();
         }
+
+        
     }
 }

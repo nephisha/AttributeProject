@@ -9,12 +9,8 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace ClinicalTrials.Pages
 {
-    class MenuPage : PageBase
+    public class MenuPage : PageBase
     {
-        public MenuPage(IWebDriver driver) : base(driver)
-        {
-        }
-
         [FindsBy(How = How.XPath, Using = "//a[@title='Toggle Mobile Menu']")]
         private IWebElement ToggleMenu { get; set; }
 
@@ -23,6 +19,7 @@ namespace ClinicalTrials.Pages
 
         public void ClickOnToggleMenu()
         {
+            
             ToggleMenu.Click();
         }
 

@@ -7,11 +7,11 @@ using TechTalk.SpecFlow;
 namespace ClinicalTrials.Steps
 {
     [Binding]
-    public class SubmitAClinicalTrialForThePatientSteps : TestBase
+    public class SubmitAClinicalTrialForThePatientSteps
     {
-        private readonly LoginPage _loginPage = new LoginPage(Driver);
-        private readonly MenuPage _menuPage = new MenuPage(Driver);
-        
+        private readonly LoginPage _loginPage = new LoginPage();
+        private readonly MenuPage _menuPage = new MenuPage();
+
         [Given(@"that I login to Clinical Trial Application with (.*) and (.*)")]
         public void GivenThatILoginToClinicalTrialApplication(string user, string pwd)
         {

@@ -12,10 +12,6 @@ namespace ClinicalTrials.Pages
 {
     public class HomePage : PageBase
     {
-        public HomePage(IWebDriver driver): base(driver)
-        {
-        }
-
         [FindsBy(How = How.Id, Using = "legend-sites")]
         private IWebElement Hospital { get; set; }
 

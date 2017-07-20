@@ -70,7 +70,7 @@ namespace ClinicalTrials.Features
         public virtual void SusanNeedsToViewTheDashboard(string user, string password, string hospital, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Clinical"};
+                    "Dashboard"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -91,7 +91,7 @@ namespace ClinicalTrials.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Susan needs to view the dashboard: Emmanuel Russel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Dashboard")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Clinical")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Dashboard")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Emmanuel Russel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "Emmanuel Russel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "Welcome@123")]

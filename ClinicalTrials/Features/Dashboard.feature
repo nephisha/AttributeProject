@@ -1,6 +1,6 @@
 ﻿Feature: Dashboard
 
-@Clinical
+@Dashboard
   Scenario Outline: Susan needs to view the dashboard
 
   Given that I login to Clinical Trial Application with <user> and <password>

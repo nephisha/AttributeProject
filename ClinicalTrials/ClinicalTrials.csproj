@@ -69,8 +69,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Base\DriverBase.cs" />
+    <Compile Include="Hooks\Hooks.cs" />
     <Compile Include="Base\PageBase.cs" />
-    <Compile Include="Base\TestBase.cs" />
     <Compile Include="Features\Dashboard.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,7 +102,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Tools\chromedriver.exe" />
+    <Content Include="Tools\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
