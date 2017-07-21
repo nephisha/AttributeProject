@@ -17,42 +17,38 @@ namespace ClinicalTrials.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("Submit a Clinical Trial for the Patient")]
     public partial class SubmitAClinicalTrialForThePatientFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
 #line 1 "SubmitClinicalTrials.feature"
 #line hidden
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        [NUnit.Framework.OneTimeSetUpAttribute()]
+        public virtual void FeatureSetup()
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Submit a Clinical Trial for the Patient", "  In order to serve the patient medically\r\n  As a Doctor\r\n  I want to be able to " +
                     "submit a clinical trial for the patient", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [NUnit.Framework.OneTimeTearDownAttribute()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Submit a Clinical Trial for the Patient")))
-            {
-                global::ClinicalTrials.Features.SubmitAClinicalTrialForThePatientFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -68,7 +64,31 @@ namespace ClinicalTrials.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SusanNeedsToSubmitAClinicalTrial(string userName, string password, string hospital, string[] exampleTags)
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Susan needs to submit a clinical trial")]
+        [NUnit.Framework.CategoryAttribute("Clinical")]
+        [NUnit.Framework.TestCaseAttribute("Test01", "Emmanuel Russel", "Welcome@123", "ACT Health", "ANZMTG", "ANZ11780009", "Phase II", "Adult", "Neurological", "Brain", "Regional", "1. Cancer", "Yes", "Wollongong Hospital", "Yes", "CEA", "Yes", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("Test02", "Emmanuel Russel", "Welcome@123", "Kosan", "CCLG", "ANZ11780010", "Phase Ia", "Adolescent", "Haematological", "Leukaemia", "Localised", "3. Both", "Yes", "Nepean Hospital", "Yes", "HER2", "Yes", "Yes", null)]
+        public virtual void SusanNeedsToSubmitAClinicalTrial(
+                    string test, 
+                    string userName, 
+                    string password, 
+                    string sponsor, 
+                    string coopGroup, 
+                    string regoNumber, 
+                    string phase, 
+                    string group, 
+                    string tumourCategory, 
+                    string tumourGroup, 
+                    string stage, 
+                    string population, 
+                    string multiCentre, 
+                    string site, 
+                    string bioMarkerStudy, 
+                    string molTarget, 
+                    string trialEligiblity, 
+                    string tissueAvailability, 
+                    string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Clinical"};
@@ -82,9 +102,10 @@ namespace ClinicalTrials.Features
 #line 10
     testRunner.Given(string.Format("that I login to Clinical Trial Application with {0} and {1}", userName, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
- testRunner.And("she fills up the Trial details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("she fills up the Trial details with {0} and {1} and {2} and {3} and {4} and {5} a" +
+                        "nd {6} and {7} and {8} and {9} and {10} and {11} and {12}", sponsor, coopGroup, regoNumber, phase, group, tumourCategory, tumourGroup, stage, population, multiCentre, site, bioMarkerStudy, molTarget), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("she fills up the BioMarker section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("she fills up the BioMarker section {0} and {1} and {2}", trialEligiblity, molTarget, tissueAvailability), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.And("she fills up the Trial Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
@@ -97,21 +118,6 @@ namespace ClinicalTrials.Features
     testRunner.Then("she should be shown with success message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Susan needs to submit a clinical trial: Emmanuel Russel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Submit a Clinical Trial for the Patient")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Clinical")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Emmanuel Russel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:UserName", "Emmanuel Russel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Password", "Welcome@123")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Hospital", "Canberra Hospital")]
-        public virtual void SusanNeedsToSubmitAClinicalTrial_EmmanuelRussel()
-        {
-#line 8
-  this.SusanNeedsToSubmitAClinicalTrial("Emmanuel Russel", "Welcome@123", "Canberra Hospital", ((string[])(null)));
-#line hidden
         }
     }
 }

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using TechTalk.SpecFlow;
 
 namespace ClinicalTrials.Base
 {
@@ -17,9 +11,9 @@ namespace ClinicalTrials.Base
 
         public static IWebDriver GetDefaultDriver()
         {
-            Driver = new ChromeDriver(Path.Combine(Environment.CurrentDirectory, @"Tools\"));
+            Driver = new ChromeDriver(@"C:\Drivers");
             new ChromeOptions().AddArguments("no-sandbox");
-            //Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
+            Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             return Driver;
         }

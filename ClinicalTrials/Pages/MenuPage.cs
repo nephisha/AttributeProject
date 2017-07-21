@@ -19,7 +19,6 @@ namespace ClinicalTrials.Pages
 
         public void ClickOnToggleMenu()
         {
-            
             ToggleMenu.Click();
         }
 
